@@ -1,34 +1,82 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Teacher management</title>
+	<meta charset="ISO-8859-1">
+	<title>Teacher management</title>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+	</style>
 </head>
 <body>
 <div>
-	<h1> Teacher List </h1>
-	<a th:href="@{/createTeacher}" >Create Teacher</a>
-	<table border="1" class="table table-striped table-responsive-md">
+	<h1>Teacher List</h1>
+	<a th:href="@{/createTeacher}">Create Teacher</a>
+	<table>
 		<thead>
-			<tr>
-				<th>ID</th>
-				<th>User</th>
-				<th>Password</th>
-			</tr>
+		<tr>
+			<th>ID</th>
+			<th>User</th>
+			<th>Password</th>
+			<th>Actions</th>
+		</tr>
 		</thead>
 		<tbody>
-			<tr th:each="teacher : ${teacherList}">
-				<td th:text="${teacher.id}"></td>
-				<td th:text="${teacher.user}"></td>
-				<td th:text="${teacher.password}"></td>
-				<td>
-					<a th:href="@{/deleteTeacher/{id}(id=${teacher.id})}" >Delete</a>
-					<a th:href="@{/updateTeacher/{id}(id=${teacher.id})}" >Update</a>
-				</td>
-			</tr>
+		<tr th:each="teacher : ${teacherList}">
+			<td th:text="${teacher.id}"></td>
+			<td th:text="${teacher.user}"></td>
+			<td th:text="${teacher.password}"></td>
+			<td>
+				<a th:href="@{/deleteTeacher/{id}(id=${teacher.id})}">Delete</a>
+				<a th:href="@{/updateTeacher/{id}(id=${teacher.id})}">Update</a>
+			</td>
+		</tr>
 		</tbody>
 	</table>
-	
+
 	<a th:href="@{/adminOptions}">Go back</a>
 </div>
 </body>

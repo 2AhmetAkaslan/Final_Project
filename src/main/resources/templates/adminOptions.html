@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Admin Page</title>
+	<meta charset="ISO-8859-1">
+	<title>Admin Page</title>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        hr {
+            width: 50%;
+            margin: auto;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        a:hover {
+            color: #45a049;
+        }
+	</style>
 </head>
 <body>
 <div>
-    <h1>Admin Page</h1>
-    <hr>
-		<a th:href="@{/checkTeachers}">Manage Teachers</a>
-		<br>
-    	<a th:href="@{/checkStudents}">Manage Students</a>
-    	<br>
-    	<a th:href="@{/checkSubjects}">Manage Subjects</a>
-    <hr>
-    
-    <a th:href="@{/}">Logout</a>
+	<h1>Admin Page</h1>
+	<hr>
+	<a th:href="@{/checkTeachers}">Manage Teachers</a>
+	<br>
+	<a th:href="@{/checkStudents}">Manage Students</a>
+	<br>
+	<a th:href="@{/checkSubjects}">Manage Subjects</a>
+	<hr>
+
+	<a th:href="@{/}">Logout</a>
 </div>
 </body>
 </html>

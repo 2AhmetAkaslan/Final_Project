@@ -1,26 +1,66 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Departments management</title>
+	<meta charset="ISO-8859-1">
+	<title>Admin List</title>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+	</style>
 </head>
 <body>
 <div>
-	<h1> Admin List </h1>
-	<table border="1" class="table table-striped table-responsive-md">
+	<h1>Admin List</h1>
+	<table>
 		<thead>
-			<tr>
-				<th>ID</th>
-				<th>User</th>
-				<th>Password</th>
-			</tr>
+		<tr>
+			<th>ID</th>
+			<th>User</th>
+			<th>Password</th>
+		</tr>
 		</thead>
 		<tbody>
-			<tr th:each="admin : ${adminList}">
-				<td th:text="${admin.id}"></td>
-				<td th:text="${admin.user}"></td>
-				<td th:text="${admin.password}"></td>
-			</tr>
+		<tr th:each="admin : ${adminList}">
+			<td th:text="${admin.id}"></td>
+			<td th:text="${admin.user}"></td>
+			<td th:text="${admin.password}"></td>
+		</tr>
 		</tbody>
 	</table>
 </div>

@@ -1,29 +1,87 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Departments management</title>
+	<meta charset="ISO-8859-1">
+	<title>Teacher Creation Page</title>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        hr {
+            width: 50%;
+            margin: auto;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #4CAF50;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+	</style>
 </head>
 <body>
 <div>
 	<h1>Teacher Creation Page</h1>
-		<hr>
-		<h2>Save Teacher</h2>
-		
-		<form action="#" th:action="@{/saveTeacher}" th:object="${newTeacher}" method="POST">
+	<hr>
+	<h2>Save Teacher</h2>
 
-			<input type="text" th:field="*{id}" placeholder="ID" >
+	<form action="#" th:action="@{/saveTeacher}" th:object="${newTeacher}" method="POST">
 
-			<input type="text" th:field="*{user}" placeholder="Name" >
- 
-			<input type="text" th:field="*{password}" placeholder="Password" >
-			
-			<button type="submit" > Register</button>
-		</form>
-		
-		<hr>
-		
-		<a th:href="@{/checkTeachers}"> Go Back</a>
+		<input type="text" th:field="*{id}" placeholder="ID">
+
+		<input type="text" th:field="*{user}" placeholder="Name">
+
+		<input type="text" th:field="*{password}" placeholder="Password">
+
+		<button type="submit">Register</button>
+	</form>
+
+	<hr>
+
+	<a th:href="@{/checkTeachers}">Go Back</a>
 </div>
 </body>
 </html>

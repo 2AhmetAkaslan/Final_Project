@@ -1,26 +1,79 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Teacher management</title>
+	<meta charset="ISO-8859-1">
+	<title>Teacher Update</title>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        hr {
+            width: 50%;
+            margin: auto;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+	</style>
 </head>
 <body>
 <div>
 	<h1>Teacher Update Page</h1>
-		<hr>
-	
-		<form action="#" th:action="@{/saveTeacher}" th:object="${teacher}" method="POST">
-		
-			<input type="hidden" th:field="*{id}" >
-			<input type="text" th:field="*{user}" >
-			<input type="text" th:field="*{password}" >
+	<hr>
 
-			<button type="submit" > Update</button>
-		</form>
-		
- 		<hr>
- 		
- 		<a th:href="@{/checkTeachers}"> Back to User List</a>	
+	<form action="#" th:action="@{/saveTeacher}" th:object="${teacher}" method="POST">
+		<input type="hidden" th:field="*{id}">
+		<input type="text" th:field="*{user}" placeholder="User" required>
+		<br>
+		<input type="text" th:field="*{password}" placeholder="Password" required>
+		<br>
+		<button type="submit">Update</button>
+	</form>
+
+	<hr>
+
+	<a th:href="@{/checkTeachers}">Back to User List</a>
 </div>
 </body>
 </html>

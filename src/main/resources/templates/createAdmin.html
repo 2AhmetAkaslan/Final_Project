@@ -1,29 +1,82 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Departments management</title>
+	<meta charset="ISO-8859-1">
+	<title>Departments management</title>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        hr {
+            width: 50%;
+            margin: auto;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+	</style>
 </head>
 <body>
 <div>
 	<h1>Admin Creation Page</h1>
-		<hr>
-		<h2>Save Admin</h2>
-		
-		<form action="#" th:action="@{/saveAdmin}" th:object="${newAdmin}" method="POST">
+	<hr>
+	<h2>Save Admin</h2>
 
-			<input type="text" th:field="*{id}" placeholder="ID" >
+	<form action="#" th:action="@{/saveAdmin}" th:object="${newAdmin}" method="POST">
 
-			<input type="text" th:field="*{user}" placeholder="Name" >
- 
-			<input type="text" th:field="*{password}" placeholder="Password" >
-			
-			<button type="submit" > Register</button>
-		</form>
-		
-		<hr>
-		
-		<a th:href="@{/}"> Back to main page</a>
+		<input type="text" th:field="*{id}" placeholder="ID">
+
+		<input type="text" th:field="*{user}" placeholder="Name">
+
+		<input type="text" th:field="*{password}" placeholder="Password">
+
+		<button type="submit">Register</button>
+	</form>
+
+	<hr>
+
+	<a th:href="@{/}">Back to main page</a>
 </div>
 </body>
 </html>

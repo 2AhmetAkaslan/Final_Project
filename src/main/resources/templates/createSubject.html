@@ -1,27 +1,80 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Subject management</title>
+	<meta charset="ISO-8859-1">
+	<title>Subject management</title>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        hr {
+            width: 50%;
+            margin: auto;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+	</style>
 </head>
 <body>
 <div>
 	<h1>Subject Creation Page</h1>
-		<hr>
-		
-		<form action="#" th:action="@{/saveSubject}" th:object="${newSubject}" method="POST">
+	<hr>
 
-			<input type="text" th:field="*{id}" placeholder="ID" >
-			<input type="text" th:field="*{name}" placeholder="Name" >
-			<input type="text" th:field="*{active}" placeholder="Active (true/false)" >
-			<input type="text" th:field="*{totalHours}" placeholder="Hours" >
-			
-			<button type="submit" > Register</button>
-		</form>
-		
-		<hr>
-		
-		<a th:href="@{/checkSubjects}"> Go Back</a>
+	<form action="#" th:action="@{/saveSubject}" th:object="${newSubject}" method="POST">
+
+		<input type="text" th:field="*{id}" placeholder="ID">
+		<input type="text" th:field="*{name}" placeholder="Name">
+		<input type="text" th:field="*{active}" placeholder="Active (true/false)">
+		<input type="text" th:field="*{totalHours}" placeholder="Hours">
+
+		<button type="submit">Register</button>
+	</form>
+
+	<hr>
+
+	<a th:href="@{/checkSubjects}">Go Back</a>
 </div>
 </body>
 </html>

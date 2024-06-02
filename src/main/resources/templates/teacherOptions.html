@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Teacher Page</title>
+    <meta charset="ISO-8859-1">
+    <title>Teacher Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        hr {
+            width: 50%;
+            margin: auto;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 <div>
     <h1>Teacher Page</h1>
     <hr>
-		<a th:href="@{/seeSubjectsTeacher}">See Subjects</a>
-		<br>
+    <a th:href="@{/seeSubjectsTeacher}">See Subjects</a>
     <hr>
-    
     <a th:href="@{/}">Logout</a>
 </div>
 </body>
