@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Subject</title>
+</head>
+<body>
+<div>
+	<h1>Subject Add</h1>
+		<hr>
+		
+		<form action="#" th:action="@{/verifySubject}" th:object="${subjectToAdd}" method="POST">
+
+			<input type="text" th:field="*{id}" placeholder="ID" >
+			<input type="text" th:field="*{name}" placeholder="Name" >
+			
+			<button type="submit" > Register</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href="@{/seeSubjectsStudent}"> Go Back</a>
+</div>
+</body>
+</html>

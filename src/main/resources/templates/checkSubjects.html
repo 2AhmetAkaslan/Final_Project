@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Subject management</title>
+</head>
+<body>
+<div>
+	<h1> Subject List </h1>
+	<a th:href="@{/createSubject}" >Create Subject</a>
+	<table border="1" class="table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Active</th>
+				<th>totalHours</th>
+				<th>nStudents</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="subject : ${subjectList}">
+				<td th:text="${subject.id}"></td>
+				<td th:text="${subject.name}"></td>
+				<td th:text="${subject.active}"></td>
+				<td th:text="${subject.totalHours}"></td>
+				<td th:text="${subject.nStudents}"></td>
+				<td th:text="${subject.nApproved}"></td>
+				<td>
+					<a th:href="@{/deleteSubject/{id}(id=${subject.id})}" >Delete</a>
+					<a th:href="@{/updateSubject/{id}(id=${subject.id})}" >Update</a>
+					<a th:href="@{/addTeacher/{id}(id=${subject.id})}" >AddTeacher</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<a th:href="@{/adminOptions}">Go back</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Teacher management</title>
+</head>
+<body>
+<div>
+	<h1>Teacher Update Page</h1>
+		<hr>
+	
+		<form action="#" th:action="@{/saveTeacher}" th:object="${teacher}" method="POST">
+		
+			<input type="hidden" th:field="*{id}" >
+			<input type="text" th:field="*{user}" >
+			<input type="text" th:field="*{password}" >
+
+			<button type="submit" > Update</button>
+		</form>
+		
+ 		<hr>
+ 		
+ 		<a th:href="@{/checkTeachers}"> Back to User List</a>	
+</div>
+</body>
+</html>

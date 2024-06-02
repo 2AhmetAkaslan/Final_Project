@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Departments management</title>
+</head>
+<body>
+<div>
+	<h1> Admin List </h1>
+	<table border="1" class="table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>User</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="admin : ${adminList}">
+				<td th:text="${admin.id}"></td>
+				<td th:text="${admin.user}"></td>
+				<td th:text="${admin.password}"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

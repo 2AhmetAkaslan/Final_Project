@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Approval management</title>
+</head>
+<body>
+<div>
+	<h1>Approval Modification Page</h1>
+		<hr>
+		
+		<form action="#" th:action="@{/saveApproval}" th:object="${a}" method="POST">
+
+			<input type="text" name="a" th:value="${a}" placeholder="Number" >
+			
+			<button type="submit" > Register</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href="@{/seeSubjectsTeacher}"> Go Back</a>
+</div>
+</body>
+</html>
