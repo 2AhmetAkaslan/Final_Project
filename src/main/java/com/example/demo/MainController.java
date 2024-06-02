@@ -35,7 +35,7 @@ public class MainController
 		return "defaultPage";
 	}
 	
-	/*
+
 	@GetMapping("/checkAdmins")
 	public String adminCheckingPage(Model model)
 	{
@@ -57,7 +57,7 @@ public class MainController
     	adminRepository.save(admin);
         return "redirect:/";
     }
-    */
+
     
     @GetMapping("/loginAdmin")
     public String adminLoginForm(Model model)
